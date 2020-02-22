@@ -1,0 +1,35 @@
+Source: apt-btrfs-snapshot
+Section: admin
+Priority: optional
+XSBC-Original-Maintainer: Michael Vogt <michael.vogt@ubuntu.com>
+Maintainer: Kali Developers <devel@kali.org>
+Uploaders: Raphaël Hertzog <buxy@kali.org>, Carsten Boeving <re4son@kali.org>
+Build-Depends: debhelper (>= 7.0.50~),
+               dh-python,
+               python3-all,
+               python3-distutils-extra,
+               python3-mock,
+               pyflakes,
+               python-all (>= 2.6.5-2~),
+               python-distutils-extra,
+               python-mock,
+               pep8,
+X-Python-Version: all
+X-Python3-Version: >= 3.2
+Standards-Version: 3.9.3
+Vcs-Browser: https://gitlab.com/kalilinux/packages/apt-btrfs-snapshot
+Vcs-Git: https://gitlab.com/kalilinux/packages/apt-btrfs-snapshot.git
+
+Package: apt-btrfs-snapshot
+Architecture: all
+Depends: ${python:Depends},
+         ${python3:Depends},
+         ${misc:Depends},
+         python3-distutils,
+         btrfs-progs
+Description: Automatically create snapshot on apt operations
+ This will create a btrfs snapshot of the root filesystem each time
+ that apt installs/removes/upgrades a software package. 
+ . 
+ A commandline tool called "apt-btrfs-snapshot" is also provided
+ for easy access create/list/delete snapshots.
